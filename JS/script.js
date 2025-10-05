@@ -2,6 +2,7 @@ let tendenciasChart, prediccionesChart;
 
 function showSection(id, event) {
   document.querySelectorAll(".dashboard").forEach(sec => sec.classList.remove("active"));
+  document.querySelectorAll(".dashboard2").forEach(sec => sec.classList.remove("active"));
   document.querySelector(`#${id}`).classList.add("active");
   document.querySelectorAll(".menu button").forEach(btn => btn.classList.remove("active"));
 

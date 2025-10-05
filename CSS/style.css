@@ -11,7 +11,8 @@ body {
 /* ===== Sidebar ===== */
 .sidebar {
   width: 220px;
-  background: linear-gradient(180deg, #2e7d32, #1b5e20);
+  background: #0f2027;
+  background: linear-gradient(180deg, #2c5364, #203a43, #0f2027);
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -264,3 +265,4 @@ canvas {
 .bg4 {
   background: url('https://images.unsplash.com/photo-1523978591478-c753949ff840?auto=format&fit=crop&w=900&q=80') center/cover no-repeat;
 }
+

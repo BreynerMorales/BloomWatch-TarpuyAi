@@ -17,58 +17,58 @@
         <i class="ri-dashboard-3-line"></i> Dashboard
       </button>
       <button onclick="showSection('alertas', event)">
-        <i class="ri-leaf-line"></i> Alertas Fenológicas
+        <i class="ri-leaf-line"></i> Phenological Alerts
       </button>
       <button onclick="showSection('mapa', event)">
-        <i class="ri-earth-line"></i> Mapa Global
+        <i class="ri-earth-line"></i> Global Map
       </button>
       <button onclick="showSection('tendencias', event)">
-        <i class="ri-line-chart-line"></i> Tendencias y Predicciones
+        <i class="ri-line-chart-line"></i> Trends and Predictions
       </button>
       <button onclick="showSection('especies', event)">
-        <i class="ri-flower-line"></i> Especies
+        <i class="ri-flower-line"></i> Flower species
       </button>
     </div>
   </aside>
 
   <main class="content">
     <header>
-      <h1>Monitoreo Global de Floración</h1>
+      <h1>Global Bloom Monitoring</h1>
     </header>
 
     <!-- ===== DASHBOARD OVERVIEW ===== -->
     <section id="overview" class="dashboard active overview">
+      <div class="widget bg2" onclick="showSection('mapa')">
+        <div class="overlay"></div>
+        <div class="widget-content">
+        <img class="ri-earth-line icon" src="https://static.vecteezy.com/system/resources/previews/047/248/373/non_2x/planet-earth-3d-planet-earth-icon-planet-earth-3d-symbol-planet-earth-work-icon-world-symbol-free-png.png"/>
+        <h3>Global Map</h3>
+        <p>Visualize active flowering zones</p>
+      </div>
+    </div>
       <div class="widget bg1" onclick="showSection('alertas')">
         <div class="overlay"></div>
         <div class="widget-content">
             <img class="ri-alert-line icon" src="https://static.vecteezy.com/system/resources/previews/012/622/610/original/3d-red-alert-warning-sign-notification-icon-or-3d-danger-alert-sign-icon-png.png"/>
-            <h3>Alertas Fenológicas</h3>
-            <p>23 regiones con floración anómala</p>
+            <h3>Phenological Alerts</h3>
+            <p>23 regions with anomalous flowering</p>
           </div>
         </div>
-        <div class="widget bg2" onclick="showSection('mapa')">
-          <div class="overlay"></div>
-          <div class="widget-content">
-          <img class="ri-earth-line icon" src="https://static.vecteezy.com/system/resources/previews/047/248/373/non_2x/planet-earth-3d-planet-earth-icon-planet-earth-3d-symbol-planet-earth-work-icon-world-symbol-free-png.png"/>
-          <h3>Mapa Global</h3>
-          <p>Visualiza zonas activas de floración</p>
-        </div>
-      </div>
       <div class="widget bg3" onclick="showSection('tendencias')">
         <div class="overlay"></div>
         <div class="widget-content">
           
           <img class="ri-line-chart-line icon" src="https://static.vecteezy.com/system/resources/previews/027/722/653/original/graph-bar-icon-free-png.png"/>
-          <h3>Tendencias y Predicciones</h3>
-          <p>Seguimiento histórico y proyecciones 2026</p>
+          <h3>Trends and Predictions</h3>
+          <p>Historical monitoring and projections for 2026</p>
         </div>
       </div>
       <div class="widget bg4" onclick="showSection('especies')">
         <div class="overlay"></div>
         <div class="widget-content">
           <img class="ri-flower-line icon" src="https://static.vecteezy.com/system/resources/previews/035/646/412/original/ai-generated-flower-icon-isolated-on-transparent-background-free-png.png"/>
-          <h3>Especies</h3>
-          <p>Control y diversidad vegetal global</p>
+          <h3>Species</h3>
+          <p>Global plant diversity and control</p>
         </div>
       </div>
     </section>
@@ -76,19 +76,19 @@
     <!-- ===== ALERTAS ===== -->
     <section id="alertas" class="dashboard">
       <div class="card">
-        <h3>Zonas en alerta</h3>
-        <p class="stats">23 regiones</p>
-        <small>Basado en detecciones recientes de anomalías fenológicas.</small>
+        <h3>Zones on alert</h3>
+        <p class="stats">23 regions</p>
+        <small>Based on recent detections of phenological anomalies.</small>
       </div>
       <div class="card">
-        <h3>Última actualización</h3>
+        <h3>Last update</h3>
         <p class="stats">04 Oct 2025</p>
-        <small>Datos sincronizados con Landsat 8 y MODIS.</small>
+        <small>Data synchronized with Landsat 8 and MODIS.</small>
       </div>
       <div class="card">
-        <h3>Flujo de polen (estimado)</h3>
+        <h3>Pollen flow (estimated)</h3>
         <p class="stats">+12%</p>
-        <small>Incremento comparado con el mes anterior.</small>
+        <small>Increase compared to the previous month.</small>
       </div>
     </section>
 
@@ -96,52 +96,63 @@
     <section id="mapa" class="dashboard">
         <div class="card" style="grid-column: span 3; text-align:center;">
             <div id="globeContainer">
-                <div id="title">🌍 BloomWatch — Mapa de Floración Global</div>
+                <div id="title">
+                  
+                  <div class="btn_mode">
+                    <Button>3D mode</Button>
+                    <Button>Expert Mode</Button>
+                  </div>
+                </div>
                 <div id="globeViz"></div>
                 <div id="info"></div>
-                <button id="toggle-rotation">⏸️ Detener rotación</button>
+                <button id="toggle-rotation">⏸️ Stop rotation</button>
             </div>
         </div>
     </section>
     
 
     <!-- ===== TENDENCIAS Y PREDICCIONES ===== -->
-    <section id="tendencias" class="dashboard">
-      <div class="card">
-        <h3>Tendencias anuales</h3>
-        <div class="chart-container"><canvas id="tendenciasChart"></canvas></div>
+    <section id="tendencias" class="dashboard2">
+      <div class="main_card_tend">
+        <div class="card">
+          <h3>Annual trends</h3>
+          <div class="chart-container"><canvas id="tendenciasChart"></canvas></div>
+        </div>
+        <div class="card">
+          <h3>Predictions 2026</h3>
+          <div class="chart-container"><canvas id="prediccionesChart"></canvas></div>
+        </div>
+        <div class="card">
+          <h3>Current progress</h3>
+          <p class="stats">78%</p>
+          <small>Medium global flowering completed.</small>
+        </div>
       </div>
-      <div class="card">
-        <h3>Predicciones 2026</h3>
-        <div class="chart-container"><canvas id="prediccionesChart"></canvas></div>
-      </div>
-      <div class="card">
-        <h3>Progreso actual</h3>
-        <p class="stats">78%</p>
-        <small>De floración media global completada.</small>
+      <div class="card2">
+        <h1>HOLA</h1>
       </div>
     </section>
 
     <!-- ===== ESPECIES ===== -->
     <section id="especies" class="dashboard">
       <div class="card">
-        <h3>Top especies en floración</h3>
+        <h3>Top flowering species</h3>
         <ul>
-          <li>🌻 Girasol - 89% floración</li>
-          <li>🌹 Rosa silvestre - 76%</li>
-          <li>🌾 Trigo - 65%</li>
-          <li>🌺 Cerezo - 54%</li>
+          <li>🌻 Sunflower - 89% flowering</li>
+          <li>🌹 Wild rose - 76%</li>
+          <li>🌾 Wheat - 65%</li>
+          <li>🌺 Cherry - 54%</li>
         </ul>
       </div>
       <div class="card">
-        <h3>Especies invasoras detectadas</h3>
+        <h3>Invasive species detected</h3>
         <p class="stats">3 nuevas</p>
-        <small>Detección mediante índice NDVI multitemporal.</small>
+        <small>Detection using multitemporal NDVI index.</small>
       </div>
       <div class="card">
-        <h3>Riesgo ecológico</h3>
+        <h3>Ecological risk</h3>
         <p class="stats">Moderado</p>
-        <small>Monitoreo activo en zonas de alta biodiversidad.</small>
+        <small>Active monitoring in areas of high biodiversity.</small>
       </div>
     </section>
   </main>
@@ -153,4 +164,3 @@
     <!-- Librerías -->
 </body>
 </html>
-

@@ -67,6 +67,13 @@ body {
   box-shadow: 0 0 12px rgba(76, 175, 80, 0.35);
   background: linear-gradient(90deg, rgba(56,142,60,0.25), rgba(76,175,80,0.05));
 }
+.btn_mode > a {
+  color:white;
+   text-decoration: none;
+  border-color: rgba(76, 175, 80, 0.4);
+  box-shadow: 0 0 12px rgba(76, 175, 80, 0.35);
+  background: linear-gradient(90deg, rgba(56,142,60,0.25), rgba(76,175,80,0.05));
+}
 
 .menu button:hover::before {
   opacity: 1;
@@ -295,6 +302,13 @@ canvas {
   margin: auto;
 }
 .btn_mode >  button {
+  width: 12vw;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+.btn_mode >  a {
   width: 12vw;
   font-size: 1.5rem;
   border-radius: 10px;
